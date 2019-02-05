@@ -15,7 +15,7 @@ class FormularioGasto extends Component{
 
         console.log(gasto);
         // agregarlo y enviarlo por props
-        
+        this.props.agregarGasto(gasto);
 
         // resetear el formulario (opcional)
         e.currentTarget.reset();

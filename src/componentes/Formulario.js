@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 
+
 class FormularioGasto extends Component{
     //creamos los refs para los campos del formulario
     nombreGastoRef = React.createRef();

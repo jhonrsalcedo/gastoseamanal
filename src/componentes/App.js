@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Header from './Header';
 import Formulario from './Formulario';
+import Listado from './Listado';
+
 class App extends Component {
   //crear el state se puede de dos formas 
 
@@ -14,7 +16,7 @@ class App extends Component {
   //   }
   // }
   state ={
-        presupueto: '',
+        presupuesto: '',
         restante: '',
         gastos: {}
       }
@@ -24,7 +26,7 @@ class App extends Component {
 // agregar un nuevo gasto al state
   agregarGasto = gasto =>{
     // tomar una copia del state actual
-    const gastos = {...this.props.gastos}
+    const gastos = {...this.props.gastos};
 
 
     // console.log('Se agrego el gasto'+ gasto)
@@ -32,7 +34,7 @@ class App extends Component {
   // agregar al gasto al objeto del state
     gastos[`gasto${Date.now()}`] = gasto;
 
-    console.log(gastos);
+    // console.log(gastos);
   //ponerlo en state
     this.setState({
       gastos
@@ -60,7 +62,12 @@ class App extends Component {
         />
         
         </div>
-        <div className="col-md-6">col-6</div>
+        <div className="col-md-6">
+        <Listado
+          gastos={this.state.gastos}
+        />
+        
+        </div>
        
        </div>
 

@@ -12,14 +12,14 @@ class FormularioGasto extends Component{
     handleSubmit = (e) =>{
         //prevenir el default
         e.preventDefault();
-
+      
         //crear el objeto con los datos
         const gasto = this.state
-        //agregarlo y enviarlo por props
-
-        //resetear el formulario
         console.log(gasto);
-        
+        //agregarlo y enviarlo por props
+        this.props.agregarGasto(gasto);
+    
+        //resetear el formulario
      this.setState({
         nombreGastoValue: '',
         cantidadGastoValue:''

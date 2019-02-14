@@ -4,9 +4,31 @@ import Formulario from './Formulario';
 // import Listado from './Listado';
 
 class App extends Component {
-
+//pasando los datos principales al componente principal
   //agregar nuevo gasto al state
+  constructor(props){
+    super(props);
+    this.state={
+      presupuestoListado: '',
+      restanteListado:'',
+      gastoListado:{}
+    }
+  }
 
+  // Agregar un nuevo gasto al state
+  agregarGasto = gasto =>{
+    // tomar una copia del state 
+    const gastos = {...this.state.gastos}
+
+    console.log('Se agrego el gasto ' + gasto);
+    console.log(gastos)
+
+    // agregar al gasto al objeto del state
+
+    
+
+    //ponerlo en state
+  }
 
   render() {
     return (
@@ -20,7 +42,7 @@ class App extends Component {
        <div className="row jumbotron">
         <div className="col-md-6">
         <Formulario
-            agregarGastos = {this.agregarGastos}
+            agregarGasto = {this.agregarGasto}
         />
         
         </div>

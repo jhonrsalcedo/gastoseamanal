@@ -5,6 +5,8 @@ import Formulario from './Formulario';
 
 class App extends Component {
 
+  //agregar nuevo gasto al state
+
 
   render() {
     return (
@@ -18,8 +20,7 @@ class App extends Component {
        <div className="row jumbotron">
         <div className="col-md-6">
         <Formulario
-  
-
+            agregarGastos = {this.agregarGastos}
         />
         
         </div>

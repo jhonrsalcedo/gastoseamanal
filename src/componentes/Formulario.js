@@ -20,6 +20,10 @@ class FormularioGasto extends Component{
         //resetear el formulario
         console.log(gasto);
         
+     this.setState({
+        nombreGastoValue: '',
+        cantidadGastoValue:''
+     })
          
     }
 

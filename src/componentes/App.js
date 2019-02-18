@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Header from './Header';
 import Formulario from './Formulario';
-// import Listado from './Listado';
+import Listado from './Listado';
+
 
 class App extends Component {
 //pasando los datos principales al componente principal
@@ -26,7 +27,7 @@ class App extends Component {
     // agregar al gasto al objeto del state
     gastos[`gasto${Date.now()}`] = gasto;
     
-    console.log(gastos);
+    // console.log(gastos);
 
     //ponerlo en state
     this.setState({
@@ -51,7 +52,9 @@ class App extends Component {
         
         </div>
         <div className="col-md-6">
-     
+     <Listado
+      gastos={this.state.gastos}
+     />
         <div/>
         
         </div>

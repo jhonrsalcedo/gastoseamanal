@@ -6,7 +6,8 @@ class Listado extends Component{
         return(
             <div>
                 <h4 className="text-center">Listado</h4>
-                   {console.log(this.props.gastos)}
+                  {console.log(this.props.gasto)}
+                  
                 </div>
         )
 

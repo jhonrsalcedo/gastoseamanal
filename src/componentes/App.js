@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Header from './Header';
 import Formulario from './Formulario';
-// import Listado from './Listado';
+import Listado from './Listado';
 
 
 class App extends Component {
@@ -21,18 +21,18 @@ class App extends Component {
     // tomar una copia del state 
     const gastosCopia = {...this.state.gastosListado}
 
-    console.log('Se agrego el gasto ' + gastoNuevo);
-    console.log(gastosCopia)
+    // console.log('Se agrego el gasto ' + gastoNuevo);
+    // console.log(gastosCopia)
 
-    // // agregar al gasto al objeto del state
-    // gastos[`gastoListado${Date.now()}`] = gasto;
+   // agregar al gasto al objeto del state
+   gastosCopia[`gastoKey${Date.now()}`] = gastoNuevo;
     
-    // // console.log(gastos);
+    // console.log(gastosCopia);
 
-    // //ponerlo en state
-    // this.setState({
-    //   gastos
-    // })
+    //ponerlo en state
+    this.setState({
+      gastoListado : gastosCopia,
+    })
   }
 
   render() {
@@ -47,14 +47,14 @@ class App extends Component {
        <div className="row jumbotron">
         <div className="col-md-6">
         <Formulario
-            agregarGasto= {this.agregarGastoFuncionListado}
+            agregarGasto = {this.agregarGastoFuncionListado}
         />
         
         </div>
         <div className="col-md-6">
-     {/* <Listado
-      gasto={this.state.gasto}
-     /> */}
+     <Listado
+      gastoListado={this.state.gastoListado}
+     />
         <div/>
         
         </div>

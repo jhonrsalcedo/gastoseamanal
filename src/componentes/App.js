@@ -15,6 +15,16 @@ class App extends Component {
       gastos:{}
     }
   }
+// se recomienda que para los componentDidMount etc... no tenernos cargados y por lo tanto crear un metodos que este los llame 
+componentDidMount(){
+  this.obtenerPresupuesto();
+}
+
+obtenerPresupuesto = () => {
+  let presupueto = prompt('Cual es el presupuesto?');
+  console.log(presupueto)
+}
+
 
   // Agregar un nuevo gasto al state
   agregarGastoFuncionListado = gasto =>{
@@ -22,12 +32,12 @@ class App extends Component {
     const copiaGasto = {...this.state.gastos}
 
     // console.log('Se agrego el gasto ' + gastoNuevo);
-    // console.log(gastosCopia)
+    // console.log(copiaGasto)
 
    // agregar al gasto al objeto del state
    copiaGasto[`gasto${Date.now()}`] = gasto;
     
-    // console.log(gastosCopia);
+    // console.log(copiaGasto);
 
     //ponerlo en state
     this.setState({

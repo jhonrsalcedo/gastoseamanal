@@ -7,10 +7,15 @@ class Listado extends Component{
             <div>
                 <h4 className="text-center">Listado</h4>
                 {/* para interar en un objeto usamos map*/}
-                  {console.log(this.props.gastoListado)}
-                  <Gasto 
-                    gasto={this.props.gastoListado}
-                  />
+                  {Object.keys(this.props.gastos).map(key =>(
+                      
+                      <Gasto 
+                      key={key}
+                      gasto={this.props.gastos[key]}
+                      />
+                     
+                  ) )}
+               
                 </div>
         )
 

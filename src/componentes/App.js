@@ -12,26 +12,26 @@ class App extends Component {
     this.state={
       presupuestoListado: '',
       restanteListado:'',
-      gastoListado:{}
+      gastos:{}
     }
   }
 
   // Agregar un nuevo gasto al state
-  agregarGastoFuncionListado = gastoNuevo =>{
+  agregarGastoFuncionListado = gasto =>{
     // tomar una copia del state 
-    const gastosCopia = {...this.state.gastosListado}
+    const copiaGasto = {...this.state.gastos}
 
     // console.log('Se agrego el gasto ' + gastoNuevo);
     // console.log(gastosCopia)
 
    // agregar al gasto al objeto del state
-   gastosCopia[`gastoKey${Date.now()}`] = gastoNuevo;
+   copiaGasto[`gasto${Date.now()}`] = gasto;
     
     // console.log(gastosCopia);
 
     //ponerlo en state
     this.setState({
-      gastoListado : gastosCopia,
+      gastos: copiaGasto
     })
   }
 
@@ -53,7 +53,7 @@ class App extends Component {
         </div>
         <div className="col-md-6">
      <Listado
-      gastoListado={this.state.gastoListado}
+      gastos={this.state.gastos}
      />
         <div/>
         

@@ -4,9 +4,11 @@ import React, {Component} from 'react';
 class Gasto extends Component{
     
     render(){
-
+        const {cantidadGastoValue, nombreGastoValue} = this.props.gasto;
         return(
-         <p>desde gasto</p>
+         <li>
+             {nombreGastoValue} {cantidadGastoValue} 
+         </li>
         )
     }
 }

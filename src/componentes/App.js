@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import Header from './Header';
 import Formulario from './Formulario';
 import Listado from './Listado';
-
+import ControlPresupuesto from './ControlPresupuesto';
+import {validarPresupuesto} from './helper';
 
 class App extends Component {
 //pasando los datos principales al componente principal
@@ -10,19 +11,29 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state={
-      presupuestoListado: '',
-      restanteListado:'',
+      presupuesto: '',
+      restante:'',
       gastos:{}
     }
   }
-// se recomienda que para los componentDidMount etc... no tenernos cargados y por lo tanto crear un metodos que este los llame 
+// se recomienda que para los componentDidMount etc... no tenerlos cargados y por lo tanto crear un metodos que este los llame 
 componentDidMount(){
   this.obtenerPresupuesto();
 }
 
 obtenerPresupuesto = () => {
-  let presupueto = prompt('Cual es el presupuesto?');
-  console.log(presupueto)
+  let presupuesto = prompt('Cual es el presupuesto?');
+  // console.log(presupueto)
+  let resultado = validarPresupuesto(presupuesto);
+  if (resultado) {
+    console.log("valido")
+    this.setState({
+      presupuesto: presupuesto,
+      restante: presupuesto
+    })
+  }else{
+    this.obtenerPresupuesto();
+  }
 }
 
 
@@ -39,10 +50,25 @@ obtenerPresupuesto = () => {
     
     // console.log(copiaGasto);
 
+    //restar al presupuesto
+    this.restarPresupuesto(gasto.cantidadGastoValue);
+
     //ponerlo en state
     this.setState({
       gastos: copiaGasto
     })
+
+  }
+
+//Restar del presupuesto cuando un gasto se crea
+restarPresupuesto = cantidad => {
+  //pasar string cantidad a number
+  let restar = Number(cantidad);
+
+  let restante = this.state.restante;
+  restante -= restar;
+
+  console.log(restante);
   }
 
   render() {
@@ -64,6 +90,10 @@ obtenerPresupuesto = () => {
         <div className="col-md-6">
      <Listado
       gastos={this.state.gastos}
+     />
+     <ControlPresupuesto
+      presupuesto={this.state.presupuesto}
+      restante={this.state.restante}
      />
         <div/>
         

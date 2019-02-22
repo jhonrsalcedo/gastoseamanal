@@ -16,7 +16,7 @@ export const revisarPresupuesto = (presupuesto,restante) => {
     } else if( (presupuesto / 2) > restante) {
         clase = 'alert alert-warning'
     } else {
-        clase = 'alert alert alert-success';
+        clase = 'alert alert-success';
     }
     return clase;
 } 

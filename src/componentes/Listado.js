@@ -15,7 +15,7 @@ class Listado extends Component{
                       />
                      
                   ) )}
-               
+               <br></br>
                 </div>
         )
 

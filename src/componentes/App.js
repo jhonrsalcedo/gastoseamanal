@@ -68,7 +68,9 @@ restarPresupuesto = cantidad => {
   let restante = this.state.restante;
   restante -= restar;
 
-  console.log(restante);
+  this.setState({
+    restante
+  })
   }
 
   render() {

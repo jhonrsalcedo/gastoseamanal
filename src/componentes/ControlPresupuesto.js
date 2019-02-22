@@ -9,7 +9,6 @@ class ControlPresupuesto extends Component{
                 <React.Fragment>
                     <Presupuesto
                         presupuesto={this.props.presupuesto}
-                        
                     />
                     <Restante
                     restante={this.props.restante}

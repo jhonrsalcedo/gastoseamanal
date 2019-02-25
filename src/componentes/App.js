@@ -26,7 +26,6 @@ obtenerPresupuesto = () => {
   // console.log(presupueto)
   let resultado = validarPresupuesto(presupuesto);
   if (resultado) {
-    console.log("valido")
     this.setState({
       presupuesto: presupuesto,
       restante: presupuesto
@@ -62,9 +61,10 @@ obtenerPresupuesto = () => {
 
 //Restar del presupuesto cuando un gasto se crea
 restarPresupuesto = cantidad => {
+
   //pasar string cantidad a number
   let restar = Number(cantidad);
-
+  // copia del state actual
   let restante = this.state.restante;
   restante -= restar;
 

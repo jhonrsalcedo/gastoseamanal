@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {revisarPresupuesto} from './helper';
 import PropTypes from 'prop-types';
 
-class Restante extends Component{
+export default class Restante extends Component{
     render(){
         const presupuesto = this.props.presupuesto;
         const restante = this.props.restante;
@@ -17,4 +17,4 @@ Restante.propTypes = {
     presupuesto: PropTypes.string.isRequired,
     restante: PropTypes.string.isRequired
 }
-export default Restante;
+

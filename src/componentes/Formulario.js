@@ -13,7 +13,7 @@ class FormularioGasto extends Component{
     handleSubmit = (e) =>{
         //prevenir el default
         e.preventDefault();
-        if(this.state.nombreGastoValue === '' || this.state.cantidadGastoValue === ''){
+        if(this.state.nombreGastoValue === '' && this.state.cantidadGastoValue === ''){
             alert("El campo esta vacío");
            return false;
            }else{  

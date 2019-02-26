@@ -13,12 +13,16 @@ class FormularioGasto extends Component{
     handleSubmit = (e) =>{
         //prevenir el default
         e.preventDefault();
-      
+        if(this.state.nombreGastoValue === '' || this.state.cantidadGastoValue === ''){
+            alert("El campo esta vacío");
+           return false;
+           }else{  
         //crear el objeto con los datos
         const gastoForm = this.state
-        //  
+        
         //agregarlo y enviarlo por props
         this.props.agregarGasto(gastoForm);
+    }
         // console.log(gastoForm);
         //resetear el formulario
      this.setState({

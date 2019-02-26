@@ -67,7 +67,8 @@ restarPresupuesto = cantidad => {
   // copia del state actual
   let restante = this.state.restante;
   restante -= restar;
-
+  // lo pasamos a string nuevamente para validar los PropTypes
+  restante = String(restante);
   this.setState({
     restante
   })
